@@ -8,6 +8,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.destroy_all
+
 user = {id: 1, name: "Page", description: "app creator!!", thumbnail: "https://avatars.githubusercontent.com/u/53319614?s=400&u=9fd57e4b5146de1510b0660a9d027aa41809a0d4&v=4", resourceURI: 'www.github.com'}
 User.create(user)
 

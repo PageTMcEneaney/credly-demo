@@ -4359,3 +4359,336 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 99ms (Views: 86.4ms | ActiveRecord: 1.1ms | Allocations: 55736)
 
 
+  [1m[35m (210.0ms)[0m  [1m[35mCREATE DATABASE "credly_demo_development" ENCODING = 'utf8'[0m
+  [1m[35m (90.0ms)[0m  [1m[35mCREATE DATABASE "credly_demo_test" ENCODING = 'utf8'[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(709428741989580900)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220409205255)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "userId" integer, "name" character varying, "description" text, "thumbnail" character varying, "resourceURI" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220409205255"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-10 22:31:30.857723"], ["updated_at", "2022-04-10 22:31:30.857723"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(709428741989580900)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id", "userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 1], ["userId", nil], ["name", "Page"], ["description", "app creator!!"], ["thumbnail", "https://avatars.githubusercontent.com/u/53319614?s=400&u=9fd57e4b5146de1510b0660a9d027aa41809a0d4&v=4"], ["resourceURI", "www.github.com"], ["created_at", "2022-04-10 22:31:39.882246"], ["updated_at", "2022-04-10 22:31:39.882246"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011334], ["name", "3-D Man"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:31:41.639788"], ["updated_at", "2022-04-10 22:31:41.639788"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 1], ["userId", nil], ["name", "Page"], ["description", "app creator!!"], ["thumbnail", "https://avatars.githubusercontent.com/u/53319614?s=400&u=9fd57e4b5146de1510b0660a9d027aa41809a0d4&v=4"], ["resourceURI", "www.github.com"], ["created_at", "2022-04-10 22:32:15.976452"], ["updated_at", "2022-04-10 22:32:15.976452"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011334], ["name", "3-D Man"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.621398"], ["updated_at", "2022-04-10 22:32:17.621398"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1017100], ["name", "A-Bomb (HAS)"], ["description", "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction! "], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.625210"], ["updated_at", "2022-04-10 22:32:17.625210"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009144], ["name", "A.I.M."], ["description", "AIM is a terrorist organization bent on destroying the world."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/6/20/52602f21f29ec.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.628540"], ["updated_at", "2022-04-10 22:32:17.628540"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010699], ["name", "Aaron Stack"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.631760"], ["updated_at", "2022-04-10 22:32:17.631760"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009146], ["name", "Abomination (Emil Blonsky)"], ["description", "Formerly known as Emil Blonsky, a spy of Soviet Yugoslavian origin working for the KGB, the Abomination gained his powers after receiving a dose of gamma radiation similar to that which transformed Bruce Banner into the incredible Hulk."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/50/4ce18691cbf04.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.635132"], ["updated_at", "2022-04-10 22:32:17.635132"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1016823], ["name", "Abomination (Ultimate)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.638556"], ["updated_at", "2022-04-10 22:32:17.638556"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009148], ["name", "Absorbing Man"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/1/b0/5269678709fb7.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.641734"], ["updated_at", "2022-04-10 22:32:17.641734"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009149], ["name", "Abyss"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/30/535feab462a64.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.645250"], ["updated_at", "2022-04-10 22:32:17.645250"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010903], ["name", "Abyss (Age of Apocalypse)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/3/80/4c00358ec7548.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.649001"], ["updated_at", "2022-04-10 22:32:17.649001"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011266], ["name", "Adam Destine"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.652472"], ["updated_at", "2022-04-10 22:32:17.652472"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010354], ["name", "Adam Warlock"], ["description", "Adam Warlock is an artificially created human who was born in a cocoon at a scientific complex called The Beehive."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/a/f0/5202887448860.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.656583"], ["updated_at", "2022-04-10 22:32:17.656583"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010846], ["name", "Aegis (Trey Rollins)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/5/e0/4c0035c9c425d.gif"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.660414"], ["updated_at", "2022-04-10 22:32:17.660414"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1017851], ["name", "Aero (Aero)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.664645"], ["updated_at", "2022-04-10 22:32:17.664645"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1012717], ["name", "Agatha Harkness"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/c/a0/4ce5a9bf70e19.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.668081"], ["updated_at", "2022-04-10 22:32:17.668081"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011297], ["name", "Agent Brand"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.671933"], ["updated_at", "2022-04-10 22:32:17.671933"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011031], ["name", "Agent X (Nijo)"], ["description", "Originally a partner of the mind-altering assassin Black Swan, Nijo spied on Deadpool as part of the Swan's plan to exact revenge for Deadpool falsely taking credit for the Swan's assassination of the Four Winds crime family, which included Nijo's brother."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.675143"], ["updated_at", "2022-04-10 22:32:17.675143"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009150], ["name", "Agent Zero"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c0042121d790.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.679297"], ["updated_at", "2022-04-10 22:32:17.679297"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011198], ["name", "Agents of Atlas"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/a0/4ce18a834b7f5.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.682837"], ["updated_at", "2022-04-10 22:32:17.682837"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011175], ["name", "Aginar"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.686557"], ["updated_at", "2022-04-10 22:32:17.686557"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011136], ["name", "Air-Walker (Gabriel Lan)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.689867"], ["updated_at", "2022-04-10 22:32:17.689867"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011176], ["name", "Ajak"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/2/80/4c002f35c5215.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.693396"], ["updated_at", "2022-04-10 22:32:17.693396"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010870], ["name", "Ajaxis"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/70/4c0035adc7d3a.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.697356"], ["updated_at", "2022-04-10 22:32:17.697356"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011194], ["name", "Akemi"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.700973"], ["updated_at", "2022-04-10 22:32:17.700973"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011170], ["name", "Alain"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.704681"], ["updated_at", "2022-04-10 22:32:17.704681"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009240], ["name", "Albert Cleary"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.708049"], ["updated_at", "2022-04-10 22:32:17.708049"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011120], ["name", "Albion"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.711779"], ["updated_at", "2022-04-10 22:32:17.711779"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010836], ["name", "Alex Power"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/50/4ce5a385a2e82.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.715063"], ["updated_at", "2022-04-10 22:32:17.715063"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010755], ["name", "Alex Wilder"], ["description", "Despite being the only one of the Runaways without any superhuman abilities or tech, Alex Wilder became the de facto leader of the group due to his natural leadership skills and intellect, as well as prodigy-level logic and strategy."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/2/c0/4c00377144d5a.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.718699"], ["updated_at", "2022-04-10 22:32:17.718699"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011214], ["name", "Alexa Mendez"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.722038"], ["updated_at", "2022-04-10 22:32:17.722038"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009497], ["name", "Alexander Pierce"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.725601"], ["updated_at", "2022-04-10 22:32:17.725601"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1014990], ["name", "Alice"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/6/70/4cd061e6d6573.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.729474"], ["updated_at", "2022-04-10 22:32:17.729474"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009435], ["name", "Alicia Masters"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/4c003d40ac7ae.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.733121"], ["updated_at", "2022-04-10 22:32:17.733121"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010370], ["name", "Alpha Flight"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/1/60/52695277ee088.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.736676"], ["updated_at", "2022-04-10 22:32:17.736676"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011324], ["name", "Alpha Flight (Ultimate)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.739999"], ["updated_at", "2022-04-10 22:32:17.739999"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011164], ["name", "Alvin Maker"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.751110"], ["updated_at", "2022-04-10 22:32:17.751110"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011227], ["name", "Amadeus Cho"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/3/80/520288b9cb581.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.755124"], ["updated_at", "2022-04-10 22:32:17.755124"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009567], ["name", "Amanda Sefton"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.758978"], ["updated_at", "2022-04-10 22:32:17.758978"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011382], ["name", "Amazoness"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.762721"], ["updated_at", "2022-04-10 22:32:17.762721"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011361], ["name", "American Eagle (Jason Strongbow)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/80/4ce5a6d8b8f2a.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.766387"], ["updated_at", "2022-04-10 22:32:17.766387"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009151], ["name", "Amiko"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.769735"], ["updated_at", "2022-04-10 22:32:17.769735"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010672], ["name", "Amora"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.773258"], ["updated_at", "2022-04-10 22:32:17.773258"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010673], ["name", "Amphibian (Earth-712)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.776993"], ["updated_at", "2022-04-10 22:32:17.776993"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010905], ["name", "Amun"], ["description", "Amun is a ruthless teenage assassin, employed by the Sisterhood of the Wasp to serve under the mage Vincent after Araña interrupted the ritual to initiate the Wasp's new chosen one."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.780505"], ["updated_at", "2022-04-10 22:32:17.780505"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009152], ["name", "Ancient One"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/b0/4ce59ea2103ac.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.784082"], ["updated_at", "2022-04-10 22:32:17.784082"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1016824], ["name", "Ancient One (Ultimate)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.787546"], ["updated_at", "2022-04-10 22:32:17.787546"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011684], ["name", "Angel (Angel Salvadore)"], ["description", "Driven out of home by her abusive step-father, fourteen-year old Angel Salvadore slept in the woods, where her mutant nature manifested itself in the form of a protective cocoon."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.791662"], ["updated_at", "2022-04-10 22:32:17.791662"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011396], ["name", "Angel (Thomas Halloway)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/d/03/531769834b15f.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.796043"], ["updated_at", "2022-04-10 22:32:17.796043"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011338], ["name", "Angel (Ultimate)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/4/50/531769ae4399f.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.799889"], ["updated_at", "2022-04-10 22:32:17.799889"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009153], ["name", "Angel (Warren Worthington III)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.803576"], ["updated_at", "2022-04-10 22:32:17.803576"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1017574], ["name", "Angela (Aldrif Odinsdottir)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/7/00/545a82f59dd73.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.807594"], ["updated_at", "2022-04-10 22:32:17.807594"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010674], ["name", "Anita Blake"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/2/a0/4c0038fa14452.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.811750"], ["updated_at", "2022-04-10 22:32:17.811750"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009346], ["name", "Anne Marie Hoag"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.815974"], ["updated_at", "2022-04-10 22:32:17.815974"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009154], ["name", "Annihilus"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/5/f0/528d31f20a2f6.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.819517"], ["updated_at", "2022-04-10 22:32:17.819517"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011301], ["name", "Anole"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/20/4c002e635ddd9.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.823708"], ["updated_at", "2022-04-10 22:32:17.823708"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010802], ["name", "Ant-Man (Eric O'Grady)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/53176aa9df48d.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.827599"], ["updated_at", "2022-04-10 22:32:17.827599"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009155], ["name", "Ant-Man (Hank Pym)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.831552"], ["updated_at", "2022-04-10 22:32:17.831552"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010801], ["name", "Ant-Man (Scott Lang)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/e/20/52696868356a0.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.835042"], ["updated_at", "2022-04-10 22:32:17.835042"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011208], ["name", "Anthem"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.839018"], ["updated_at", "2022-04-10 22:32:17.839018"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009156], ["name", "Apocalypse"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/e0/526166076a1d0.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.842738"], ["updated_at", "2022-04-10 22:32:17.842738"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011253], ["name", "Apocalypse (Ultimate)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.846526"], ["updated_at", "2022-04-10 22:32:17.846526"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010866], ["name", "Aqueduct"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/5/50/4c0035b3630cd.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.850200"], ["updated_at", "2022-04-10 22:32:17.850200"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010773], ["name", "Arachne"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/70/5269526591794.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.853567"], ["updated_at", "2022-04-10 22:32:17.853567"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1017438], ["name", "Araٌa"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.856804"], ["updated_at", "2022-04-10 22:32:17.856804"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009158], ["name", "Arcade"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/2/a0/4c0042091ab69.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.864418"], ["updated_at", "2022-04-10 22:32:17.864418"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010686], ["name", "Arcana"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.868057"], ["updated_at", "2022-04-10 22:32:17.868057"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009159], ["name", "Archangel"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/8/03/526165ed93180.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.871696"], ["updated_at", "2022-04-10 22:32:17.871696"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009160], ["name", "Arclight"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/5/f0/4c0042067fd8b.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.875079"], ["updated_at", "2022-04-10 22:32:17.875079"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010784], ["name", "Ares"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/c/10/535ff3daea603.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.878665"], ["updated_at", "2022-04-10 22:32:17.878665"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011275], ["name", "Argent"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.882222"], ["updated_at", "2022-04-10 22:32:17.882222"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011012], ["name", "Armadillo"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/2/40/4c0032754da02.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.894774"], ["updated_at", "2022-04-10 22:32:17.894774"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011298], ["name", "Armor (Hisako Ichiki)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/20/4c002e6cbf990.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.912140"], ["updated_at", "2022-04-10 22:32:17.912140"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010827], ["name", "Armory"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.931826"], ["updated_at", "2022-04-10 22:32:17.931826"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009740], ["name", "Arnim Zola"], ["description", "The frail, dwarfish Arnim Zola was born in 1930s Switzerland where he became the world's leading biochemist and genetic engineer."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/8/b0/4c00393a4cb7c.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.938287"], ["updated_at", "2022-04-10 22:32:17.938287"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010748], ["name", "Arsenic"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/8/c0/4c00359a2be7b.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.961681"], ["updated_at", "2022-04-10 22:32:17.961681"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009161], ["name", "Artiee"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.965503"], ["updated_at", "2022-04-10 22:32:17.965503"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010718], ["name", "Asgardian"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.968913"], ["updated_at", "2022-04-10 22:32:17.968913"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009162], ["name", "Askew-Tronics"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.972223"], ["updated_at", "2022-04-10 22:32:17.972223"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010835], ["name", "Asylum"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.975550"], ["updated_at", "2022-04-10 22:32:17.975550"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010336], ["name", "Atlas (Team)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.978834"], ["updated_at", "2022-04-10 22:32:17.978834"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011758], ["name", "Attuma"], ["description", "Attuma was born into the tribe of Homo mermanus who eschewed civilization to live as nomadic barbarians. For some unrecorded reason, Attuma was endowed with strength far surpassing that of his people."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4ce5a862a6c48.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.982234"], ["updated_at", "2022-04-10 22:32:17.982234"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009163], ["name", "Aurora"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/10/4c004203f1072.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.985257"], ["updated_at", "2022-04-10 22:32:17.985257"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009164], ["name", "Avalanche"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/10/4c0042010d383.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.988774"], ["updated_at", "2022-04-10 22:32:17.988774"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009165], ["name", "Avengers"], ["description", "Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man, Ant-Man, Hulk, Thor, Wasp and dozens more over the years, the Avengers have come to be regarded as Earth's No. 1 team."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/20/5102c774ebae7.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.992690"], ["updated_at", "2022-04-10 22:32:17.992690"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1015239], ["name", "Avengers (Ultimate)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.996417"], ["updated_at", "2022-04-10 22:32:17.996417"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011766], ["name", "Azazel (Mutant)"], ["description", "A mutant from biblical times, Azazel is the ruler of the Neyaphem and claims that the Earth and everything on it belongs to him."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:17.999903"], ["updated_at", "2022-04-10 22:32:17.999903"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011456], ["name", "Balder"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/f0/4ce5a7c2814ba.gif"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.003675"], ["updated_at", "2022-04-10 22:32:18.003675"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009168], ["name", "Banshee"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/03/52740e4619f54.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.007564"], ["updated_at", "2022-04-10 22:32:18.007564"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009596], ["name", "Banshee (Theresa Rourke)"], ["description", "The daughter of former X-Men member Sean Cassidy, a.k.a. Banshee, and Maeve Rourke, Theresa Rourke was raised by her first cousin once removed, mutant terrorist Thomas Cassidy, a.k.a. Black Tom."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/c0/4ce5a1a50e56b.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.011487"], ["updated_at", "2022-04-10 22:32:18.011487"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011778], ["name", "Baron Mordo (Karl Mordo)"], ["description", "Born in 1921, Karl Mordo was the son of Nikolai Mordo.  He vowed that, as the second Baron Mordo, he would achieve his father’s hopes and more."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/90/4ce5a86dba8a8.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.015675"], ["updated_at", "2022-04-10 22:32:18.015675"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009169], ["name", "Baron Strucker"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/8/80/4c0041fb5a90d.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.018834"], ["updated_at", "2022-04-10 22:32:18.018834"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009170], ["name", "Baron Zemo (Heinrich Zemo)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/9/60/4c0041f84c9fe.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.022006"], ["updated_at", "2022-04-10 22:32:18.022006"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1010906], ["name", "Baron Zemo (Helmut Zemo)"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/4c0035890fb0a.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.025145"], ["updated_at", "2022-04-10 22:32:18.025145"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011137], ["name", "Baroness S'Bak"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.028625"], ["updated_at", "2022-04-10 22:32:18.028625"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011354], ["name", "Barracuda"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.032003"], ["updated_at", "2022-04-10 22:32:18.032003"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009550], ["name", "Bart Rozum"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.035601"], ["updated_at", "2022-04-10 22:32:18.035601"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009171], ["name", "Bastion"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/d/80/52695253215f4.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.039261"], ["updated_at", "2022-04-10 22:32:18.039261"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009172], ["name", "Batroc the Leaper"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/c/80/4ce59eb840da5.gif"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.042772"], ["updated_at", "2022-04-10 22:32:18.042772"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009173], ["name", "Battering Ram"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.046746"], ["updated_at", "2022-04-10 22:32:18.046746"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1011785], ["name", "Battlestar"], ["description", "Lamar Hoskins was once a wrestler who was given superhuman strength by the Power Broker."], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.050533"], ["updated_at", "2022-04-10 22:32:18.050533"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("userId", "name", "description", "thumbnail", "resourceURI", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userId", 1009174], ["name", "Beak"], ["description", ""], ["thumbnail", "http://i.annihil.us/u/prod/marvel/i/mg/5/90/4c0040b8329ad.jpg"], ["resourceURI", nil], ["created_at", "2022-04-10 22:32:18.054711"], ["updated_at", "2022-04-10 22:32:18.054711"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m

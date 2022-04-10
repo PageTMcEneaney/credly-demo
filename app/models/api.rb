@@ -13,4 +13,8 @@ class Api < ApplicationRecord
     json = JSON.parse(response.body)
     return json["data"]["results"]
   end
+
+  def self.fetch_credly
+    url = "https://sandbox-api.credly.com/v1/organizations/f6d0716e-484e-48df-9165-866228215b32/badge_templates"
+  end
 end
