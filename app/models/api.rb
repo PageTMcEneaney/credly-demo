@@ -28,4 +28,55 @@ class Api < ApplicationRecord
     json = JSON.parse(response.body)
     return json["data"]
   end
+
+  def self.post_credly_badge_1(id, name)
+    apikey = ENV['CREDLY_API_TOKEN']
+    url = 'https://sandbox-api.credly.com/v1/organizations/f6d0716e-484e-48df-9165-866228215b32/badges'
+    options = {
+      :basic_auth => { username: apikey, password: '' },
+      :headers => { 'Content-Type' => 'application/json' },
+      :body => { 
+        :badge_template_id => '251f322f-e9fa-41c2-9675-11b6dddbd696', 
+        :issued_at => Time.now,
+        :issued_to_first_name => name,
+        :issued_to_last_name => id,
+        :recipient_email => 'marvel-' + id + '@gmail.com'
+      }
+    }
+    # options = {
+    #   'basic_auth' { 'username': apikey, 'password': '' },
+    #   'headers': { 'Content-Type': 'application/json' },
+    #   'body': { 
+    #     'badge_template_id': '251f322f-e9fa-41c2-9675-11b6dddbd696', 
+    #     'issued_at': Time.now,
+    #     'issued_to_first_name': name,
+    #     'issued_to_last_name': id,
+    #     'recipient_email': 'marvel-' + id + '@gmail.com'
+    #   }
+    # }
+    p options
+    response = HTTParty.post(url, options)
+    json = JSON.parse(response.body)
+    p response
+    return json["data"]
+  end
+
+  # def self.post_credly_badge_2(id, name)
+  #   apikey = ENV['CREDLY_API_TOKEN']
+  #   url = "https://sandbox-api.credly.com/v1/organizations/f6d0716e-484e-48df-9165-866228215b32/badges"
+  #   response = HTTParty.post(
+  #     url, 
+  #     :basic_auth => { username: apikey, password: "" },
+  #     :headers => { 'Accept' => 'application/json', 'Content-Type' => 'application/json' },
+  #     :body => { 
+  #       :badge_template_id => "61b7c61d-cfb5-424c-b175-a51267d06f52", 
+  #       :issued_at => Time.now,
+  #       :issued_to_first_name => name,
+  #       :issued_to_last_name => id,
+  #       :recipient_email => "marvel-" + id + "@gmail.com"
+  #     }
+  #   )
+  #   json = JSON.parse(response.body)
+  #   return json["data"]
+  # end
 end

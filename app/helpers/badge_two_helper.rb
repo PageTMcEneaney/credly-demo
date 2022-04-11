@@ -1,0 +1,2 @@
+module BadgeTwoHelper
+end
