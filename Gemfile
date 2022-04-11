@@ -77,3 +77,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+
+group :production do
+  gem 'rails_12factor'
+end
