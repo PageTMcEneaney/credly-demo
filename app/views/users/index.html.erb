@@ -40,9 +40,15 @@
                   data-user=<%= user.id %> 
                   data-add-badge="1"
                   onclick="window.location = '/badge_one/index?id=<%= user.id %>'">
-                  +1
+                  #1
                 </button>
-                <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-5 focus:outline-none hover:bg-gray-200 rounded text-md" data-user=<%= user.id %> data-add-badge="2">+2</button>
+                <button 
+                  class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-5 focus:outline-none hover:bg-gray-200 rounded text-md" 
+                  data-user=<%= user.id %> 
+                  data-add-badge="2"
+                  onclick="window.location = '/badge_two/index?id=<%= user.id %>'">
+                  #2
+                </button>
               </div>
             </div>
           
