@@ -7566,3 +7566,15 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 10.8ms | Allocations: 8135)
 
 
+Started GET "/" for ::1 at 2022-04-11 08:15:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 23.4ms | Allocations: 11519)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 14384)
+Completed 200 OK in 51ms (Views: 30.0ms | ActiveRecord: 6.2ms | Allocations: 21026)
+
+
