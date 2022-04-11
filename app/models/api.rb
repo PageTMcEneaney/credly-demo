@@ -32,9 +32,15 @@ class Api < ApplicationRecord
   def self.post_credly_badge_1(id, name)
     apikey = ENV['CREDLY_API_TOKEN']
     url = 'https://sandbox-api.credly.com/v1/organizations/f6d0716e-484e-48df-9165-866228215b32/badges'
+    auth = { 
+      :username => apikey, 
+      :password => '' 
+    }
     options = {
-      :basic_auth => { 'username' => apikey, 'password' => '' },
-      :headers => {  'Accept' => 'application/json', 'Authorization' => 'Basic ' + apikey + '=', 'Content-Type' => 'application/json' },
+      :basic_auth => auth,
+      :headers => { 
+        'Content-Type' => 'application/json' 
+      },
       :body => { 
         :badge_template_id => '251f322f-e9fa-41c2-9675-11b6dddbd696', 
         :issued_at => Time.now,
@@ -45,15 +51,18 @@ class Api < ApplicationRecord
     }
     response = HTTParty.post(url, options)
     json = JSON.parse(response.body)
-    p response
     return json["data"]
   end
 
   def self.post_credly_badge_2(id, name)
     apikey = ENV['CREDLY_API_TOKEN']
     url = "https://sandbox-api.credly.com/v1/organizations/f6d0716e-484e-48df-9165-866228215b32/badges"
+    auth = { 
+      :username => apikey, 
+      :password => '' 
+    }
     options = {
-      :basic_auth => { 'username' => apikey, 'password' => '' },
+      :basic_auth => auth,
       :headers => { 'Content-Type' => 'application/json' },
       :body => { 
         :badge_template_id => '61b7c61d-cfb5-424c-b175-a51267d06f52', 

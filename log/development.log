@@ -7123,3 +7123,342 @@ Processing by BadgeOneController#index as HTML
 Completed 200 OK in 445ms (Views: 5.8ms | ActiveRecord: 15.3ms | Allocations: 11731)
 
 
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:43:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 451)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3735)
+Completed 200 OK in 381ms (Views: 15.7ms | ActiveRecord: 5.0ms | Allocations: 21626)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:44:20 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.6ms | Allocations: 5290)
+
+
+  
+TypeError (no implicit conversion of String into Hash):
+  
+app/models/api.rb:46:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:44:38 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.1ms | Allocations: 6582)
+
+
+  
+NoMethodError (undefined method `each_with_object' for "{\"Accept\":\"application/json\",\"Authorization\":\"Basic 15LNQls54k7pY7qyw9DfHIbMv-RhoohtNDWQ=\",\"Content-Type\":\"application/json\"}":String):
+  
+app/models/api.rb:46:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:45:31 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.7ms | Allocations: 6495)
+
+
+  
+NoMethodError (undefined method `each_with_object' for "{\"Accept\":\"application/json\",\"Authorization\":\"Basic 15LNQls54k7pY7qyw9DfHIbMv-RhoohtNDWQ=\",\"Content-Type\":\"application/json\"}":String):
+  
+app/models/api.rb:53:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:45:46 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 5.2ms | Allocations: 5384)
+
+
+  
+TypeError (no implicit conversion of String into Hash):
+  
+app/models/api.rb:53:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:45:58 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.4ms | Allocations: 5351)
+
+
+  
+TypeError (no implicit conversion of String into Hash):
+  
+app/models/api.rb:53:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:46:13 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2685)
+Completed 200 OK in 333ms (Views: 6.5ms | ActiveRecord: 4.2ms | Allocations: 9569)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:46:49 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2683)
+Completed 200 OK in 345ms (Views: 5.0ms | ActiveRecord: 9.4ms | Allocations: 9592)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:47:27 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.0ms | Allocations: 5280)
+
+
+  
+ArgumentError (:basic_auth must be a hash):
+  
+app/models/api.rb:55:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:47:40 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2678)
+Completed 200 OK in 352ms (Views: 4.8ms | ActiveRecord: 3.9ms | Allocations: 9565)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:47:59 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.9ms | Allocations: 6438)
+
+
+  
+NoMethodError (undefined method `each_with_object' for "{\"Accept\":\"application/json\",\"Authorization\":\"Basic 15LNQls54k7pY7qyw9DfHIbMv-RhoohtNDWQ=\",\"Content-Type\":\"application/json\"}":String):
+  
+app/models/api.rb:55:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:49:25 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2688)
+Completed 200 OK in 1481ms (Views: 5.7ms | ActiveRecord: 3.9ms | Allocations: 9698)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:50:22 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.2ms | Allocations: 6331)
+
+
+  
+NoMethodError (undefined method `strip' for {"username"=>"15LNQls54k7pY7qyw9DfHIbMv-RhoohtNDWQ", "password"=>""}:Hash):
+  
+app/models/api.rb:52:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:50:39 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 3.4ms | Allocations: 6420)
+
+
+  
+NoMethodError (undefined method `strip' for {"username"=>"15LNQls54k7pY7qyw9DfHIbMv-RhoohtNDWQ", "password"=>""}:Hash):
+  
+app/models/api.rb:52:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:51:21 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2684)
+Completed 200 OK in 338ms (Views: 5.4ms | ActiveRecord: 3.6ms | Allocations: 9549)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:52:33 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2683)
+Completed 200 OK in 322ms (Views: 8.7ms | ActiveRecord: 3.4ms | Allocations: 9498)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:53:00 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.5ms | Allocations: 5136)
+
+
+  
+SyntaxError (/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:43: syntax error, unexpected string literal, expecting '}'
+        'Content-Type' => 'application...
+        ^
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:44: syntax error, unexpected '}', expecting `end'
+      },
+      ^
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:46: syntax error, unexpected symbol literal, expecting label or ** or **arg or string literal
+        :badge_template_id => '251f322...
+        ^
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:46: syntax error, unexpected ',', expecting `end'
+...f-e9fa-41c2-9675-11b6dddbd696', 
+...                              ^
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:47: syntax error, unexpected '.', expecting `end'
+        :issued_at => Time.now,
+                          ^
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:48: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+...       :issued_to_first_name => name,
+...                             ^~
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:49: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+        :issued_to_last_name => id,
+                             ^~
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:50: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+        :recipient_email => 'marvel-' + id + '@gmail.com'
+                         ^~
+/Users/pagetaylormceneaney/dev/credly-demo/app/models/api.rb:51: syntax error, unexpected '}', expecting `end'
+      }.to_json
+      ^
+):
+  
+app/models/api.rb:43: syntax error, unexpected string literal, expecting '}'
+app/models/api.rb:44: syntax error, unexpected '}', expecting `end'
+app/models/api.rb:46: syntax error, unexpected symbol literal, expecting label or ** or **arg or string literal
+app/models/api.rb:46: syntax error, unexpected ',', expecting `end'
+app/models/api.rb:47: syntax error, unexpected '.', expecting `end'
+app/models/api.rb:48: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:49: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:50: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:51: syntax error, unexpected '}', expecting `end'
+app/models/api.rb:43: syntax error, unexpected string literal, expecting '}'
+app/models/api.rb:44: syntax error, unexpected '}', expecting `end'
+app/models/api.rb:46: syntax error, unexpected symbol literal, expecting label or ** or **arg or string literal
+app/models/api.rb:46: syntax error, unexpected ',', expecting `end'
+app/models/api.rb:47: syntax error, unexpected '.', expecting `end'
+app/models/api.rb:48: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:49: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:50: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:51: syntax error, unexpected '}', expecting `end'
+app/models/api.rb:43: syntax error, unexpected string literal, expecting '}'
+app/models/api.rb:44: syntax error, unexpected '}', expecting `end'
+app/models/api.rb:46: syntax error, unexpected symbol literal, expecting label or ** or **arg or string literal
+app/models/api.rb:46: syntax error, unexpected ',', expecting `end'
+app/models/api.rb:47: syntax error, unexpected '.', expecting `end'
+app/models/api.rb:48: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:49: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:50: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/models/api.rb:51: syntax error, unexpected '}', expecting `end'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:53:09 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.4ms | Allocations: 6399)
+
+
+  
+NoMethodError (undefined method `strip' for {"username"=>"15LNQls54k7pY7qyw9DfHIbMv-RhoohtNDWQ", "password"=>""}:Hash):
+  
+app/models/api.rb:53:in `post_credly_badge_1'
+app/controllers/badge_one_controller.rb:4:in `index'
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:54:39 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2678)
+Completed 200 OK in 424ms (Views: 7.0ms | ActiveRecord: 3.2ms | Allocations: 9732)
+
+
+Started GET "/badge_one/index?id=5" for ::1 at 2022-04-11 00:58:10 -0700
+Processing by BadgeOneController#index as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/badge_one_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_one/index.html.erb within layouts/application
+  Rendered badge_one/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2679)
+Completed 200 OK in 769ms (Views: 6.7ms | ActiveRecord: 4.3ms | Allocations: 10399)
+
+
+Started GET "/" for ::1 at 2022-04-11 00:59:07 -0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 7067)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 9763)
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 3.5ms | Allocations: 11500)
+
+
+Started GET "/" for ::1 at 2022-04-11 00:59:10 -0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 4415)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 5429)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 5781)
+
+
+Started GET "/badge_two/index?id=9" for ::1 at 2022-04-11 00:59:14 -0700
+Processing by BadgeTwoController#index as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/badge_two_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering badge_two/index.html.erb within layouts/application
+  Rendered badge_two/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 151)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1352)
+Completed 200 OK in 714ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 5912)
+
+
